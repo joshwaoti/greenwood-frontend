@@ -23,7 +23,7 @@ export default function PageTransitionOverlay() {
     <>
       {/* Sheet 1 – white */}
       <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-white"
+        className="pointer-events-none fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-white"
         variants={transitionVariants}
         initial="initial"
         animate="animate"
@@ -32,7 +32,7 @@ export default function PageTransitionOverlay() {
       />
       {/* Sheet 2 – light green */}
       <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-green-100"
+        className="pointer-events-none fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-green-100"
         variants={transitionVariants}
         initial="initial"
         animate="animate"
@@ -41,7 +41,7 @@ export default function PageTransitionOverlay() {
       />
       {/* Sheet 3 – emerald */}
       <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-emerald-200"
+        className="pointer-events-none fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-emerald-200"
         variants={transitionVariants}
         initial="initial"
         animate="animate"
