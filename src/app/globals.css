@@ -167,3 +167,22 @@ html {
 .perspective-1000 {
   perspective: 1000px;
 }
+
+/* Hide scrollbars */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Remove horizontal scrollbar on body */
+body {
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}

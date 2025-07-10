@@ -22,16 +22,16 @@ export default function HomePage() {
       gsap.utils.toArray(".animate-section").forEach((section: any) => {
         gsap.fromTo(
           section,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,
-            duration: 1,
-            ease: "power2.out",
+            duration: 0.4,
+            ease: "power1.out",
             scrollTrigger: {
               trigger: section,
-              start: "top 80%",
-              end: "bottom 20%",
+              start: "top 98%",
+              end: "bottom 5%",
               toggleActions: "play none none reverse",
             },
           }

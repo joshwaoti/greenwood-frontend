@@ -21,17 +21,17 @@ export function Events() {
       cardsRef.current.forEach((card, index) => {
         gsap.fromTo(
           card,
-          { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+          { opacity: 0, x: index % 2 === 0 ? -20 : 20 },
           {
             opacity: 1,
             x: 0,
-            duration: 1,
-            ease: "power2.out",
-            delay: index * 0.2,
+            duration: 0.3,
+            ease: "power1.out",
+            delay: index * 0.05,
             scrollTrigger: {
               trigger: card,
-              start: "top 80%",
-              end: "bottom 20%",
+              start: "top 98%",
+              end: "bottom 5%",
               toggleActions: "play none none reverse",
             },
           }

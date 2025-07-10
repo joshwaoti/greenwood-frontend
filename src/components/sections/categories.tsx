@@ -110,18 +110,18 @@ export function Categories() {
       cardsRef.current.forEach((card, index) => {
         gsap.fromTo(
           card,
-          { opacity: 0, y: 60, rotateY: 25 },
+          { opacity: 0, y: 20, rotateY: 10 },
           {
             opacity: 1,
             y: 0,
             rotateY: 0,
-            duration: 1,
-            ease: "power3.out",
-            delay: index * 0.08,
+            duration: 0.4,
+            ease: "power2.out",
+            delay: index * 0.03,
             scrollTrigger: {
               trigger: card,
-              start: "top 85%",
-              end: "bottom 15%",
+              start: "top 98%",
+              end: "bottom 5%",
               toggleActions: "play none none reverse",
             },
           }

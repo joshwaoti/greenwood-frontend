@@ -1,55 +1,55 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Mail, Gift, Bell, Star } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Mail, Gift, Bell, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 export function Newsletter() {
-  const [email, setEmail] = useState("")
-  const [isSubscribed, setIsSubscribed] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-  const cardRef = useRef<HTMLDivElement>(null)
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         cardRef.current,
-        { opacity: 0, y: 50, scale: 0.9 },
+        { opacity: 0, y: 15, scale: 0.98 },
         {
           opacity: 1,
           y: 0,
           scale: 1,
-          duration: 1,
+          duration: 0.4,
           ease: "power2.out",
           scrollTrigger: {
             trigger: cardRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
+            start: "top 98%",
+            end: "bottom 5%",
             toggleActions: "play none none reverse",
           },
-        },
-      )
-    }, sectionRef)
+        }
+      );
+    }, sectionRef);
 
-    return () => ctx.revert()
-  }, [])
+    return () => ctx.revert();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (email) {
-      setIsSubscribed(true)
-      setEmail("")
-      setTimeout(() => setIsSubscribed(false), 3000)
+      setIsSubscribed(true);
+      setEmail("");
+      setTimeout(() => setIsSubscribed(false), 3000);
     }
-  }
+  };
 
   return (
     <section
@@ -63,7 +63,10 @@ export function Newsletter() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <Card ref={cardRef} className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl">
+        <Card
+          ref={cardRef}
+          className="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm border-0 shadow-2xl"
+        >
           <CardContent className="p-8 md:p-12">
             <div className="text-center mb-8">
               <div className="flex justify-center mb-6">
@@ -72,11 +75,13 @@ export function Newsletter() {
                 </div>
               </div>
 
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Stay in the Loop</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Stay in the Loop
+              </h2>
 
               <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                Subscribe to our newsletter and be the first to know about exclusive offers, new store openings, and
-                upcoming events.
+                Subscribe to our newsletter and be the first to know about
+                exclusive offers, new store openings, and upcoming events.
               </p>
             </div>
 
@@ -86,16 +91,24 @@ export function Newsletter() {
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <Gift className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Exclusive Offers</h3>
-                <p className="text-sm text-gray-600">Get access to member-only discounts and promotions</p>
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Exclusive Offers
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Get access to member-only discounts and promotions
+                </p>
               </div>
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <Bell className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Event Updates</h3>
-                <p className="text-sm text-gray-600">Never miss out on exciting events and activities</p>
+                <h3 className="font-semibold text-gray-900 mb-2">
+                  Event Updates
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Never miss out on exciting events and activities
+                </p>
               </div>
 
               <div className="text-center">
@@ -103,7 +116,9 @@ export function Newsletter() {
                   <Star className="h-6 w-6 text-white" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">VIP Access</h3>
-                <p className="text-sm text-gray-600">Early access to sales and new store openings</p>
+                <p className="text-sm text-gray-600">
+                  Early access to sales and new store openings
+                </p>
               </div>
             </div>
 
@@ -129,14 +144,16 @@ export function Newsletter() {
               </div>
 
               <p className="text-xs text-gray-500 mt-3 text-center">
-                By subscribing, you agree to our Privacy Policy and Terms of Service.
+                By subscribing, you agree to our Privacy Policy and Terms of
+                Service.
               </p>
             </form>
 
             {isSubscribed && (
               <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg text-center">
                 <p className="text-green-800 font-medium">
-                  🎉 Thank you for subscribing! Check your email for a welcome gift.
+                  🎉 Thank you for subscribing! Check your email for a welcome
+                  gift.
                 </p>
               </div>
             )}
@@ -144,5 +161,5 @@ export function Newsletter() {
         </Card>
       </div>
     </section>
-  )
+  );
 }
