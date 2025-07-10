@@ -59,7 +59,7 @@ export function Events() {
         </div>
 
         <div className="space-y-8">
-          {events.map((event, index) => (
+          {events.slice(0, 3).map((event, index) => (
             <Card
               key={event.id}
               ref={(el) => {
