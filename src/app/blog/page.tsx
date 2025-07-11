@@ -10,7 +10,8 @@ const blogPosts = [
   {
     slug: "grand-opening-festival",
     title: "Grand Opening Festival: Greenwood Mall Launches in Style!",
-    image: "/blog/1.jpg",
+    image:
+      "https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Experience the excitement of Greenwood Mall's grand opening with live music, food, and exclusive offers.",
     date: "2024-06-01",
@@ -21,7 +22,8 @@ const blogPosts = [
   {
     slug: "summer-fashion-trends",
     title: "Top 5 Summer Fashion Trends at Greenwood",
-    image: "/blog/2.jpg",
+    image:
+      "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Discover the hottest looks and where to shop them at Greenwood Mall this summer.",
     date: "2024-06-05",
@@ -32,7 +34,8 @@ const blogPosts = [
   {
     slug: "family-fun-guide",
     title: "Family Fun Guide: Activities for All Ages",
-    image: "/blog/3.jpg",
+    image:
+      "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Plan your perfect family day out with our guide to entertainment, dining, and more.",
     date: "2024-06-10",
@@ -43,7 +46,8 @@ const blogPosts = [
   {
     slug: "dining-delights",
     title: "Dining Delights: Must-Try Restaurants",
-    image: "/blog/4.jpg",
+    image:
+      "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Explore Greenwood's diverse dining scene, from quick bites to gourmet experiences.",
     date: "2024-06-12",
@@ -54,7 +58,8 @@ const blogPosts = [
   {
     slug: "tech-gadgets-launch",
     title: "Latest Tech Gadgets Now at Greenwood",
-    image: "/blog/5.jpg",
+    image:
+      "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Stay ahead with the newest electronics and gadgets available at our stores.",
     date: "2024-06-15",
@@ -65,7 +70,8 @@ const blogPosts = [
   {
     slug: "wellness-weekend",
     title: "Wellness Weekend: Health & Beauty Offers",
-    image: "/blog/6.jpg",
+    image:
+      "https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Pamper yourself with exclusive spa, salon, and wellness deals this weekend.",
     date: "2024-06-18",
@@ -76,7 +82,8 @@ const blogPosts = [
   {
     slug: "kids-zone-launch",
     title: "Kids Zone Launch: Play, Learn, Explore!",
-    image: "/blog/7.jpg",
+    image:
+      "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Our new Kids Zone is open! Discover fun, safe activities for children of all ages.",
     date: "2024-06-20",
@@ -87,7 +94,8 @@ const blogPosts = [
   {
     slug: "eco-friendly-initiatives",
     title: "Greenwood Goes Green: Eco-Friendly Initiatives",
-    image: "/blog/8.jpg",
+    image:
+      "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Learn about our sustainability efforts and how you can participate.",
     date: "2024-06-22",
@@ -98,7 +106,8 @@ const blogPosts = [
   {
     slug: "art-exhibition",
     title: "Art Exhibition: Local Talent on Display",
-    image: "/blog/9.jpg",
+    image:
+      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Support local artists and enjoy stunning works at our month-long exhibition.",
     date: "2024-06-25",
@@ -109,7 +118,8 @@ const blogPosts = [
   {
     slug: "back-to-school-tips",
     title: "Back to School: Shopping & Success Tips",
-    image: "/blog/10.jpg",
+    image:
+      "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Get ready for the new term with our back-to-school shopping guide and expert advice.",
     date: "2024-06-28",
@@ -196,20 +206,20 @@ export default function BlogPage() {
           {/* Blog Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {paginatedPosts.map((post) => (
-            <Link
+              <Link
                 key={post.slug}
-              href={`/blog/${post.slug}`}
+                href={`/blog/${post.slug}`}
                 className="block group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 <div className="relative h-56 w-full">
                   <Image
                     src={post.image}
-                  alt={post.title}
+                    alt={post.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, 400px"
-                />
-              </div>
+                  />
+                </div>
                 <div className="p-6 space-y-2">
                   <div className="flex flex-wrap gap-2 mb-2">
                     {post.tags.map((tag) => (
@@ -218,7 +228,7 @@ export default function BlogPage() {
                         className="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full"
                       >
                         {tag}
-                </span>
+                      </span>
                     ))}
                   </div>
                   <h2 className="text-xl font-bold text-gray-900 group-hover:text-green-700 transition-colors">
@@ -231,10 +241,10 @@ export default function BlogPage() {
                     <span>{post.author}</span>
                     <span>{new Date(post.date).toLocaleDateString()}</span>
                   </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+                </div>
+              </Link>
+            ))}
+          </div>
 
           {/* Pagination */}
           {totalPages > 1 && (
@@ -253,8 +263,8 @@ export default function BlogPage() {
                 </button>
               ))}
             </div>
-      )}
-    </div>
+          )}
+        </div>
       </main>
       <Footer />
     </>

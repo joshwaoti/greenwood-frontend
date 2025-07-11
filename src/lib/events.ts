@@ -18,7 +18,7 @@ export const events: Event[] = [
     date: "2024-08-05",
     time: "18:00",
     image:
-      "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary:
       "Kick off Fashion Week with live music, runway previews, and exclusive discounts.",
     description:
@@ -32,7 +32,7 @@ export const events: Event[] = [
     date: "2024-08-10",
     time: "10:00",
     image:
-      "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Fun-filled activities for kids aged 5-12 all week long.",
     description:
       "Our week-long summer camp features arts & crafts, interactive games, and educational workshops designed to keep kids engaged and happy while parents shop.",
@@ -45,7 +45,7 @@ export const events: Event[] = [
     date: "2024-08-15",
     time: "14:00",
     image:
-      "https://images.unsplash.com/photo-1529692236671-f1db2c85e1d1?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Watch Chef Otieno whip up gourmet dishes and taste free samples.",
     description:
       "Celebrity Chef Otieno will demonstrate three signature dishes live on stage. Audience members can taste and receive recipe cards to try at home.",
@@ -58,7 +58,7 @@ export const events: Event[] = [
     date: "2024-08-20",
     time: "09:00",
     image:
-      "https://images.unsplash.com/photo-1506808547685-e2ba962dedf0?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary:
       "Fresh produce, artisanal breads, and organic goodies every month.",
     description:
@@ -72,7 +72,7 @@ export const events: Event[] = [
     date: "2024-08-25",
     time: "19:00",
     image:
-      "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Back-to-back classics on the big screen with popcorn combos.",
     description:
       "Grab your friends and enjoy a night of nostalgia with our retro movie marathon featuring 80s classics. Special popcorn and drink combos available at discounted prices.",
@@ -85,7 +85,7 @@ export const events: Event[] = [
     date: "2024-09-01",
     time: "07:00",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Free outdoor yoga session led by certified instructors.",
     description:
       "Start your Sunday with mindfulness and movement. Bring your mat and join our certified instructors for a refreshing sunrise yoga session on the rooftop garden.",
@@ -98,7 +98,7 @@ export const events: Event[] = [
     date: "2024-09-05",
     time: "11:00",
     image:
-      "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Discover the latest tech innovations from top brands.",
     description:
       "Hands-on demos, product launches, and expert talks await at our Tech & Gadget Expo showcasing cutting-edge electronics and smart devices.",
@@ -111,7 +111,7 @@ export const events: Event[] = [
     date: "2024-09-10",
     time: "13:00",
     image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/1266808/pexels-photo-1266808.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Create your own hand-made souvenirs with local artisans.",
     description:
       "Learn traditional crafting techniques and make your own keepsake to take home in this hands-on workshop led by local artisans.",
@@ -124,7 +124,7 @@ export const events: Event[] = [
     date: "2024-09-15",
     time: "10:00",
     image:
-      "https://images.unsplash.com/photo-1567427017947-545c5f6c9a96?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary: "Huge discounts across all stores for an entire week!",
     description:
       "Enjoy jaw-dropping discounts, flash sales, and limited-time offers across participating stores during our biggest sales event of the year.",
@@ -137,7 +137,7 @@ export const events: Event[] = [
     date: "2024-12-20",
     time: "17:00",
     image:
-      "https://images.unsplash.com/photo-1512299286756-d1e36c67c56f?auto=format&fit=crop&w=800&q=80",
+      "https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800",
     summary:
       "Festive melodies performed by local choirs to celebrate the season.",
     description:

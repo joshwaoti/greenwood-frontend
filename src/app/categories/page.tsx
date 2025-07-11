@@ -20,7 +20,7 @@ const categories = [
     slug: "fashion-apparel",
     icon: ShoppingBag,
     image:
-      "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const categories = [
     slug: "food-dining",
     icon: Utensils,
     image:
-      "https://images.unsplash.com/photo-1541542684-5b4b46a83f31?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const categories = [
     slug: "entertainment",
     icon: Gamepad2,
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ const categories = [
     slug: "beauty-wellness",
     icon: Sparkles,
     image:
-      "https://images.unsplash.com/photo-1556228724-4b43a826b5c7?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const categories = [
     slug: "kids-family",
     icon: Baby,
     image:
-      "https://images.unsplash.com/photo-1504151932400-72d4384f04b3?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const categories = [
     slug: "health-fitness",
     icon: Heart,
     image:
-      "https://images.unsplash.com/photo-1571019613523-33c3ec3e6e34?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 7,
@@ -68,7 +68,7 @@ const categories = [
     slug: "automotive",
     icon: Car,
     image:
-      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
   {
     id: 8,
@@ -76,7 +76,7 @@ const categories = [
     slug: "gifts-specialty",
     icon: Gift,
     image:
-      "https://images.unsplash.com/photo-1512427691650-51bed1a6ffbe?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=600",
   },
 ];
 

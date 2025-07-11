@@ -17,7 +17,7 @@ const featuredStores = [
     name: "Nakumatt Supermarket",
     category: "Supermarket & Groceries",
     image:
-      "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4.5,
     description: "Your one-stop shop for groceries and household items",
     floor: "Ground Floor",
@@ -28,7 +28,7 @@ const featuredStores = [
     name: "Java House",
     category: "Coffee & Dining",
     image:
-      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4.7,
     description: "Premium coffee and contemporary dining experience",
     floor: "First Floor",
@@ -39,7 +39,7 @@ const featuredStores = [
     name: "Bata Shoes",
     category: "Footwear",
     image:
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/267301/pexels-photo-267301.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4.4,
     description: "Quality footwear for the whole family",
     floor: "Ground Floor",
@@ -50,7 +50,7 @@ const featuredStores = [
     name: "Woolworths",
     category: "Fashion & Lifestyle",
     image:
-      "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=600&q=80",
+      "https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=600",
     rating: 4.6,
     description: "Premium fashion and lifestyle products",
     floor: "First Floor",

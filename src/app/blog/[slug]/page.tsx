@@ -9,7 +9,8 @@ const blogPosts = [
   {
     slug: "grand-opening-festival",
     title: "Grand Opening Festival: Greenwood Mall Launches in Style!",
-    image: "/blog/1.jpg",
+    image:
+      "https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=800",
     excerpt:
       "Experience the excitement of Greenwood Mall's grand opening with live music, food, and exclusive offers.",
     date: "2024-06-01",
