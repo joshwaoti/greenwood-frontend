@@ -21,8 +21,14 @@ export default function StoresPage() {
   const [selectedFloor, setSelectedFloor] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [showAllCategories, setShowAllCategories] = useState(false);
 
   const ITEMS_PER_PAGE = 6;
+  const MAX_VISIBLE_CATEGORIES = 5;
+  const visibleCategories = showAllCategories
+    ? categories
+    : categories.slice(0, MAX_VISIBLE_CATEGORIES);
+  const hasMoreCategories = categories.length > MAX_VISIBLE_CATEGORIES;
 
   const filteredStores = useMemo(() => {
     return stores.filter((store) => {
@@ -70,7 +76,7 @@ export default function StoresPage() {
           >
             All Categories
           </Button>
-          {categories.map((cat) => (
+          {visibleCategories.map((cat) => (
             <Button
               key={cat}
               variant={selectedCategory === cat ? "default" : "outline"}
@@ -80,6 +86,18 @@ export default function StoresPage() {
               {cat}
             </Button>
           ))}
+          {hasMoreCategories && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowAllCategories(!showAllCategories)}
+              className="text-gray-600 hover:text-gray-800 justify-start"
+            >
+              {showAllCategories
+                ? "Show Less"
+                : `Show More (${categories.length - MAX_VISIBLE_CATEGORIES})`}
+            </Button>
+          )}
         </div>
       </div>
 

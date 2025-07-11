@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { entertainment } from "@/lib/entertainment";
+import { stores } from "@/lib/stores";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,18 +13,46 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/layout/footer";
 import ParticlesContainer from "@/components/animations/ParticlesContainer";
 
-const categories = Array.from(new Set(entertainment.map((v) => v.category)));
-const floors = Array.from(new Set(entertainment.map((v) => v.floor)));
+// Filter stores to only show entertainment-related categories
+const entertainmentCategories = [
+  "Electronics & Gaming",
+  "Entertainment",
+  "Cinema",
+  "Bowling Alley",
+  "Play Park",
+  "Gaming",
+  "Sports & Fitness",
+];
+
+const entertainmentStores = stores.filter((store) =>
+  entertainmentCategories.some(
+    (category) =>
+      store.category.toLowerCase().includes(category.toLowerCase()) ||
+      category.toLowerCase().includes(store.category.toLowerCase())
+  )
+);
+
+const categories = Array.from(
+  new Set(entertainmentStores.map((v) => v.category))
+);
+const floors = Array.from(new Set(entertainmentStores.map((v) => v.floor)));
 
 export default function EntertainmentPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedFloor, setSelectedFloor] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
+  const [showAllCategories, setShowAllCategories] = useState(false);
   const PER_PAGE = 6;
 
+  const MAX_VISIBLE_CATEGORIES = 5;
+  const visibleCategories = showAllCategories
+    ? categories
+    : categories.slice(0, MAX_VISIBLE_CATEGORIES);
+  const hasMoreCategories = categories.length > MAX_VISIBLE_CATEGORIES;
+
   const filtered = useMemo(() => {
-    return entertainment.filter((e) => {
+    return entertainmentStores.filter((e) => {
       const cat = selectedCategory ? e.category === selectedCategory : true;
       const fl = selectedFloor ? e.floor === selectedFloor : true;
       const q = e.name.toLowerCase().includes(query.toLowerCase());
@@ -63,7 +91,7 @@ export default function EntertainmentPage() {
           >
             All
           </Button>
-          {categories.map((c) => (
+          {visibleCategories.map((c) => (
             <Button
               key={c}
               variant={selectedCategory === c ? "default" : "outline"}
@@ -72,6 +100,18 @@ export default function EntertainmentPage() {
               {c}
             </Button>
           ))}
+          {hasMoreCategories && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowAllCategories(!showAllCategories)}
+              className="text-gray-600 hover:text-gray-800"
+            >
+              {showAllCategories
+                ? "Show Less"
+                : `Show More (${categories.length - MAX_VISIBLE_CATEGORIES})`}
+            </Button>
+          )}
         </div>
       </div>
       <div>

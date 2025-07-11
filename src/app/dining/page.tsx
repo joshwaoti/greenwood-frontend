@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { dining } from "@/lib/dining";
+import { stores } from "@/lib/stores";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,18 +13,42 @@ import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/layout/footer";
 import ParticlesContainer from "@/components/animations/ParticlesContainer";
 
-const categories = Array.from(new Set(dining.map((v) => v.category)));
-const floors = Array.from(new Set(dining.map((v) => v.floor)));
+// Filter stores to only show dining-related categories
+const diningCategories = [
+  "Coffee & Dining",
+  "Fast Food",
+  "Restaurant",
+  "Cafe",
+  "Fine Dining",
+];
+
+const diningStores = stores.filter((store) =>
+  diningCategories.some(
+    (category) =>
+      store.category.toLowerCase().includes(category.toLowerCase()) ||
+      category.toLowerCase().includes(store.category.toLowerCase())
+  )
+);
+
+const categories = Array.from(new Set(diningStores.map((v) => v.category)));
+const floors = Array.from(new Set(diningStores.map((v) => v.floor)));
 
 export default function DiningPage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedFloor, setSelectedFloor] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [showAllCategories, setShowAllCategories] = useState(false);
   const PER_PAGE = 6;
 
+  const MAX_VISIBLE_CATEGORIES = 5;
+  const visibleCategories = showAllCategories
+    ? categories
+    : categories.slice(0, MAX_VISIBLE_CATEGORIES);
+  const hasMoreCategories = categories.length > MAX_VISIBLE_CATEGORIES;
+
   const filtered = useMemo(() => {
-    return dining.filter((v) => {
+    return diningStores.filter((v) => {
       const cat = selectedCategory ? v.category === selectedCategory : true;
       const fl = selectedFloor ? v.floor === selectedFloor : true;
       const q = v.name.toLowerCase().includes(query.toLowerCase());
@@ -63,7 +87,7 @@ export default function DiningPage() {
           >
             All
           </Button>
-          {categories.map((c) => (
+          {visibleCategories.map((c) => (
             <Button
               key={c}
               variant={selectedCategory === c ? "default" : "outline"}
@@ -72,6 +96,18 @@ export default function DiningPage() {
               {c}
             </Button>
           ))}
+          {hasMoreCategories && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setShowAllCategories(!showAllCategories)}
+              className="text-gray-600 hover:text-gray-800"
+            >
+              {showAllCategories
+                ? "Show Less"
+                : `Show More (${categories.length - MAX_VISIBLE_CATEGORIES})`}
+            </Button>
+          )}
         </div>
       </div>
       <div>
