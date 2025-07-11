@@ -6,12 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
-import { Filter } from "lucide-react";
+import { Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { stores } from "@/lib/stores";
 import Link from "next/link";
 import { Footer } from "@/components/layout/footer";
+import ParticlesContainer from "@/components/animations/ParticlesContainer";
 
 const categories = Array.from(new Set(stores.map((s) => s.category)));
 const floors = Array.from(new Set(stores.map((s) => s.floor)));
@@ -112,7 +112,10 @@ export default function StoresPage() {
     <>
       <main className="min-h-screen bg-white">
         <section className="relative py-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 animate-gradient-pan bg-[length:200%_200%] overflow-hidden">
-          <div className="container mx-auto px-4">
+          <div className="absolute inset-0 z-10">
+            <ParticlesContainer />
+          </div>
+          <div className="container mx-auto px-4 relative z-20">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
               Store{" "}
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">

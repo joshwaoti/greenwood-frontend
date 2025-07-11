@@ -4,17 +4,13 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Play,
-  ShoppingBag,
-  Utensils,
-  ShieldCheck,
-} from "lucide-react";
+import { ArrowRight, ShoppingBag, Utensils, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import LeafConfetti from "@/components/animations/LeafConfetti";
 import ScrollIndicator from "@/components/animations/ScrollIndicator";
 import WaveSeparator from "@/components/layout/WaveSeparator";
+import ParticlesContainer from "@/components/animations/ParticlesContainer";
+import FloatingShapes from "@/components/animations/FloatingShapes";
 import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -223,6 +219,14 @@ export function Hero() {
         {/* Micro Leaf Confetti */}
         <LeafConfetti />
 
+        {/* Particles Background */}
+        <div className="absolute inset-0 z-10">
+          <ParticlesContainer />
+        </div>
+
+        {/* Floating Shapes */}
+        <FloatingShapes />
+
         {/* Enhanced Background Elements */}
         <div ref={backgroundRef} className="absolute inset-0 overflow-hidden">
           <div className="bg-blob-1 absolute -top-40 -right-40 w-96 h-96 bg-green-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
@@ -237,7 +241,7 @@ export function Hero() {
         </div>
 
         <div className="container mx-auto px-4 py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center relative z-20">
             {/* Content */}
             <div className="space-y-8">
               {/* Heading */}

@@ -11,6 +11,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 import { Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/layout/footer";
+import ParticlesContainer from "@/components/animations/ParticlesContainer";
 
 const categories = Array.from(new Set(entertainment.map((v) => v.category)));
 const floors = Array.from(new Set(entertainment.map((v) => v.floor)));
@@ -100,7 +101,10 @@ export default function EntertainmentPage() {
     <>
       <main className="min-h-screen bg-white">
         <section className="relative py-20 bg-gradient-to-br from-green-50 via-white to-emerald-50 animate-gradient-pan bg-[length:200%_200%] overflow-hidden">
-          <div className="container mx-auto px-4">
+          <div className="absolute inset-0 z-10">
+            <ParticlesContainer />
+          </div>
+          <div className="container mx-auto px-4 relative z-20">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center">
               Entertainment{" "}
               <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">

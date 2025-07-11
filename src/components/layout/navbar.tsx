@@ -11,6 +11,7 @@ import Image from "next/image";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -31,6 +32,10 @@ export function Navbar() {
       );
     }
   }, []);
+
+  const handleLinkClick = () => {
+    setIsSheetOpen(false);
+  };
 
   return (
     <>
@@ -142,7 +147,7 @@ export function Navbar() {
               </div>
 
               {/* Mobile Menu */}
-              <Sheet>
+              <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" className="lg:hidden">
                     <Menu className="h-6 w-6" />
@@ -162,42 +167,49 @@ export function Navbar() {
                     <div className="flex flex-col space-y-4">
                       <Link
                         href="/"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Home
                       </Link>
                       <Link
                         href="/stores"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Stores
                       </Link>
                       <Link
                         href="/dining"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Dining
                       </Link>
                       <Link
                         href="/entertainment"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Entertainment
                       </Link>
                       <Link
                         href="/blog"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Blog
                       </Link>
                       <Link
                         href="/services"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Services
                       </Link>
                       <Link
                         href="/contact"
+                        onClick={handleLinkClick}
                         className="text-lg font-medium text-gray-700 hover:text-greenwood-gold transition-colors"
                       >
                         Contact
